@@ -36,6 +36,10 @@ class Order < ApplicationRecord
     end
   end
 
+  def self.total_order(id)
+    find(id).total
+  end
+
   def compute_total
     sum = 0
     order_items.each do |item|
